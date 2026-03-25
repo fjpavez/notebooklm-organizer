@@ -5,6 +5,8 @@ Chrome extension that organizes your [NotebookLM](https://notebooklm.google.com)
 NotebookLM does not offer folders or categories. This extension solves that by scanning notebook names for `#hashtags` and building a virtual folder structure — no external storage, no account linking.
 
 ---
+<img width="379" height="790" alt="image" src="https://github.com/user-attachments/assets/2d3dec8b-7409-4455-8a32-b9ca4369f1e5" />
+---
 
 ## How it works
 
