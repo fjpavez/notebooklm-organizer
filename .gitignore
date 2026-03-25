@@ -1,0 +1,20 @@
+# Dependencias (solo para generate-icons.js)
+node_modules/
+package-lock.json
+package.json
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos de debug/temporales
+*.log
+*.tmp

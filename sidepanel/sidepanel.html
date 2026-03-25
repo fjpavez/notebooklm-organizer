@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NotebookLM Organizer</title>
+  <link rel="stylesheet" href="sidepanel.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────────── -->
+  <header class="header">
+    <span class="header-logo" title="NotebookLM Organizer">📚</span>
+    <span class="header-title">Organizer</span>
+    <span class="header-count" id="header-count">0 cuadernos</span>
+    <button class="btn-icon" id="btn-export"       title="Exportar JSON">⬇</button>
+    <button class="btn-icon" id="btn-expand-all"   title="Expandir todo">⊞</button>
+    <button class="btn-icon" id="btn-collapse-all" title="Colapsar todo">⊟</button>
+    <button class="btn-icon" id="btn-debug"        title="Debug">🐛</button>
+    <button class="btn-icon spinning-target" id="btn-refresh" title="Re-escanear">↻</button>
+  </header>
+
+  <!-- ── Buscador ───────────────────────────────────────────────────── -->
+  <div class="search-wrapper">
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" class="search-input" id="search-input"
+             placeholder="Buscar cuadernos o #hashtags…"
+             autocomplete="off" spellcheck="false" />
+      <button class="search-clear" id="search-clear" title="Limpiar">✕</button>
+    </div>
+  </div>
+
+  <!-- ── Stats ──────────────────────────────────────────────────────── -->
+  <div class="stats-bar" id="stats-bar">Cargando…</div>
+
+  <!-- ── Contenido principal con scroll ────────────────────────────── -->
+  <div class="main-scroll" id="main-scroll">
+
+    <!-- Favoritos -->
+    <section class="quick-section" id="section-favorites" style="display:none">
+      <div class="quick-section-header" id="toggle-favorites">
+        <span class="quick-section-icon">⭐</span>
+        <span class="quick-section-title">Favoritos</span>
+        <span class="quick-section-arrow">▶</span>
+      </div>
+      <div class="quick-section-body" id="body-favorites"></div>
+    </section>
+
+    <!-- Recientes -->
+    <section class="quick-section" id="section-recents" style="display:none">
+      <div class="quick-section-header" id="toggle-recents">
+        <span class="quick-section-icon">🕐</span>
+        <span class="quick-section-title">Recientes</span>
+        <span class="quick-section-arrow">▶</span>
+      </div>
+      <div class="quick-section-body" id="body-recents"></div>
+    </section>
+
+    <!-- Separador -->
+    <div class="sections-divider" id="sections-divider" style="display:none"></div>
+
+    <!-- Árbol de carpetas -->
+    <div class="tree-container" id="tree-container">
+      <div class="empty-state">
+        <div class="empty-state-icon">📂</div>
+        <div class="empty-state-title">Abre NotebookLM primero</div>
+        <div class="empty-state-desc">
+          Ve a <strong>notebooklm.google.com</strong> y la extensión detectará
+          tus cuadernos automáticamente.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /main-scroll -->
+
+  <!-- ── Debug Panel ────────────────────────────────────────────────── -->
+  <div class="debug-panel" id="debug-panel" style="display:none">
+    <div class="debug-header">
+      <span>🐛 Debug</span>
+      <button id="btn-debug-close" style="background:none;border:none;cursor:pointer;font-size:16px">✕</button>
+    </div>
+    <pre id="debug-output" class="debug-output"></pre>
+  </div>
+
+  <script src="../shared/constants.js"></script>
+  <script src="../shared/messages.js"></script>
+  <script src="../shared/parser.js"></script>
+  <script src="../shared/tree-builder.js"></script>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
